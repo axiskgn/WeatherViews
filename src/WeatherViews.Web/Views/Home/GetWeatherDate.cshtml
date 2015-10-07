@@ -1,0 +1,18 @@
+﻿@model WeatherViews.Web.Models.CityWeatherModel[]
+
+@foreach (var city in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => city.CityName)
+            @Ajax.ActionLink("Удалить", "DeleteLocation", new { locationName = city.OriginalName }, new AjaxOptions { UpdateTargetId = "tableBody" },new {@class="deleteCityBtn"})
+        </td>
+
+        @foreach (var weather in city.Weather)
+        {
+            <td>
+                @Html.DisplayFor(modelItem => weather)
+            </td>
+        }
+    </tr>
+}

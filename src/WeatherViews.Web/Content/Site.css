@@ -1,0 +1,41 @@
+﻿body {
+  font-family: "Roboto", helvetica, arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+
+.table-main {
+    width: 90%;
+    margin: auto;
+}
+
+.table-main th {
+  font-weight: normal;
+  color: #039;
+  border-bottom: 2px solid #6678b1;
+  padding: 10px 8px;
+}
+
+.table-main td {
+  border-bottom: 1px solid #e8edff;
+}
+
+.table-weather {
+    border-spacing: 10px;
+    width: 100%;
+}
+
+.table-weather th {
+  font-weight: normal;
+  color: #039;
+  padding: 10px 15px;
+}
+.table-weather td {
+  color: #669;
+  padding: 10px 15px;
+}
+.table-weather tr:nth-child(2n) {
+  background: #e8edff;
+}
+

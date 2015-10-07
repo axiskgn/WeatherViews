@@ -1,0 +1,50 @@
+﻿@model WeatherViews.Web.Models.DataProviderInfoModel[]
+
+@{
+    Layout = null;
+
+    var ajaxOption = new AjaxOptions
+    {
+        UpdateTargetId = "tableBody"
+    };
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/jquery-2.1.4.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+</head>
+<body>
+<table class="table-main">
+    <tr>
+        <th>
+            Название города
+        </th>
+        @foreach (var item in Model)
+        {
+            <th>
+                @Html.DisplayFor(m => item)
+            </th>
+        }
+</tr>
+    <tbody id="tableBody">
+        @Html.Action("GetWeatherDate")
+
+    </tbody>
+
+</table>
+
+    @using (Ajax.BeginForm("AddLocation", ajaxOption))
+            {
+        <div>
+            @Html.TextBox("newLocationName")
+            <button type="submit">Добавить</button>
+        </div>
+    }
+</body>
+</html>

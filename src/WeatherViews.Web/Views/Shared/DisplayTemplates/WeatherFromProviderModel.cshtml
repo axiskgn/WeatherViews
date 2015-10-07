@@ -1,0 +1,30 @@
+﻿@model WeatherViews.Web.Models.WeatherFromProviderModel
+
+<table class="table-weather">
+    <tr>
+        <td>@Html.LabelFor(m => Model.Temperature)</td>
+        <td>@Html.DisplayFor(m => Model.Temperature)</td>
+    </tr> 
+    <tr>
+        <td>@Html.LabelFor(m => Model.WindDirection)</td>
+        <td>@Html.DisplayFor(m => Model.WindDirection)</td>
+    </tr> 
+    <tr>
+        <td>@Html.LabelFor(m => Model.WindSpeed)</td>
+        <td>@Html.DisplayFor(m => Model.WindSpeed)</td>
+    </tr> 
+    <tr>
+        <td>@Html.LabelFor(m => Model.Condition)</td>
+        <td>@Html.DisplayFor(m => Model.Condition)</td>
+    </tr> 
+    <tr>
+        <td>@Html.LabelFor(m => Model.Humidity)</td>
+        <td>@Html.DisplayFor(m => Model.Humidity)</td>
+    </tr> 
+    <tr>
+        <td>@Html.LabelFor(m => Model.Pressure)</td>
+        <td>@Html.DisplayFor(m => Model.Pressure)</td>
+    </tr>
+</table>
+
+
