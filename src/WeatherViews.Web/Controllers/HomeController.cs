@@ -70,9 +70,9 @@ namespace WeatherViews.Web.Controllers
 
         private void SetLocationList(List<string> locationList)
         {
-            var stringForSave = string.Empty;
-            locationList.ForEach(s=>stringForSave+=s+"#");
-            var bytes = Encoding.GetEncoding("Windows-1251").GetBytes(stringForSave);
+            var stringForSave = new StringBuilder();
+            locationList.ForEach(s=>stringForSave.AppendFormat("{0}#",s));
+            var bytes = Encoding.GetEncoding("Windows-1251").GetBytes(stringForSave.ToString());
             var cookie = new HttpCookie("Locations",Convert.ToBase64String(bytes)) {Expires = DateTime.Now.AddDays(10)};
             Response.SetCookie(cookie);
         }

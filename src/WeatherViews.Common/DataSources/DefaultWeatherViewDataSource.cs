@@ -67,7 +67,7 @@ namespace WeatherViews.Common.DataSources
             try
             {
                 var toponym = geoProvider.FindByName(cityName);
-                return toponym == null;
+                return toponym != null;
             }
             catch (NotFoundToponymException)
             {
